@@ -12,20 +12,23 @@
 				<tr>
 					<td>Prénom :</td>
 					<td><h:inputText
-						value="#{createContactBean.currentContact.forname}" /></td>
+						value="#{createContactBean.currentContact.forname}">
+						<f:validateLength minimum="2" maximum="30" />
+					</h:inputText></td>
 				</tr>
 
 				<tr>
 					<td>Nom :</td>
 					<td><h:inputText
-						value="#{createContactBean.currentContact.name}" /></td>
+						value="#{createContactBean.currentContact.name}">
+						<f:validateLength minimum="2" maximum="30" />
+					</h:inputText></td>
 				</tr>
 				<tr>
 					<td>Date de naissance :</td>
 					<td><h:inputText
 						value="#{createContactBean.currentContact.birthDate}">
 						<f:convertDateTime pattern="dd/MM/yyyy" />
-
 					</h:inputText></td>
 				</tr>
 
