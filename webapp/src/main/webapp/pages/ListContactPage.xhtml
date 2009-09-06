@@ -7,22 +7,32 @@
 <ui:composition template="/pages/templates/layout.xhtml">
 
 	<ui:define name="contenu">
-		<table cellspacing="5" cellpadding="5">
-			<tr>
-				<td>
-				<div><img src="#{facesContext.externalContext.requestContextPath}/images/people.png" /></div>
-				</td>
-				<td><span>[Martjin]</span> <span>[Dashorst]</span></td>
-				<td><a href="#"><img src="#{facesContext.externalContext.requestContextPath}/images/edit.png" /></a></td>
-			</tr>
-			<tr>
-				<td>
-				<div><img src="#{facesContext.externalContext.requestContextPath}/images/people.png" /></div>
-				</td>
-				<td><span>[Eelco]</span> <span>[Hillenius]</span></td>
-				<td><a href="#"><img src="#{facesContext.externalContext.requestContextPath}/images/edit.png" /></a></td>
-			</tr>
-		</table>
+		<h:dataTable value="#{listContactsBean.contactsList}" var="contact">
+			<h:column>
+				<f:facet name="header" class="header">
+					<h:outputText value="Nom" />
+				</f:facet>
+				<h:outputText value="#{contact.name}" />
+			</h:column>
+			<h:column>
+				<f:facet name="header" class="header">
+					<h:outputText value="Prénom" />
+				</f:facet>
+				<h:outputText value="#{contact.forname}" />
+			</h:column>
+			<h:column>
+				<f:facet name="header" class="header">
+					<h:outputText value="Date de naissance" />
+				</f:facet>
+				<h:outputText value="#{contact.birthDate}" />
+			</h:column>
+			<h:column>
+				<f:facet name="header" class="header">
+					<h:outputText value="Email" />
+				</f:facet>
+				<h:outputText value="#{contact.email}" />
+			</h:column>
+		</h:dataTable>
 	</ui:define>
 
 </ui:composition>
