@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:c="http://java.sun.com/jstl/core">
+<ui:composition template="/pages/templates/layout.xhtml">
+
+	<ui:define name="contenu">
+		<h:dataTable value="#{listContactsBean.contactsList}" var="contact">
+			<h:column>
+				<f:facet name="header" class="header">
+					<h:outputText value="Nom" />
+				</f:facet>
+				<h:outputText value="#{contact.name}" />
+			</h:column>
+			<h:column>
+				<f:facet name="header" class="header">
+					<h:outputText value="Prénom" />
+				</f:facet>
+				<h:outputText value="#{contact.forname}" />
+			</h:column>
+			<h:column>
+				<f:facet name="header" class="header">
+					<h:outputText value="Date de naissance" />
+				</f:facet>
+				<h:outputText value="#{contact.birthDate}" />
+			</h:column>
+			<h:column>
+				<f:facet name="header" class="header">
+					<h:outputText value="Email" />
+				</f:facet>
+				<h:outputText value="#{contact.email}" />
+			</h:column>
+		</h:dataTable>
+	</ui:define>
+
+</ui:composition>
+</html>
