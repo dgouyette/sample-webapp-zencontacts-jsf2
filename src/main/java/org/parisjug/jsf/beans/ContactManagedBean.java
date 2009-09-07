@@ -1,5 +1,6 @@
 package org.parisjug.jsf.beans;
 
+import java.util.List;
 import org.parisjug.jsf.manager.contactManager;
 import javax.annotation.PostConstruct;
 import javax.annotation.Resource;
@@ -16,6 +17,8 @@ public class ContactManagedBean {
     private contactManager contactManager;
     
     private Contact currentContact;
+
+    private List<Contact> listContact;
 
     @PostConstruct
     public void init() {
@@ -38,5 +41,10 @@ public class ContactManagedBean {
         this.currentContact = currentContact;
     }
 
+    
+
+    public List<Contact> getListContact(){
+        return listContact;
+    }
    
 }

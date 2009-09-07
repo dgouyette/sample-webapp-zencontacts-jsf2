@@ -5,15 +5,19 @@ import java.util.Date;
 import java.util.List;
 
 import javax.annotation.PostConstruct;
-import javax.faces.bean.ApplicationScoped;
-import javax.faces.bean.ManagedBean;
 import org.parisjug.jsf.domain.Contact;
 
-@ManagedBean
-@ApplicationScoped
 public class contactManager {
 
     private List<Contact> contactsList;
+    private static contactManager contactManagerInstance;
+
+    public static synchronized contactManager getInstance() {
+        if (contactManagerInstance == null) {
+            contactManagerInstance = new contactManager();
+        }
+        return contactManagerInstance;
+    }
 
     @PostConstruct
     private void init() {
