@@ -4,7 +4,7 @@
 	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-facesconfig_2_0.xsd"
 	version="2.0">
 
-	<managed-bean>
+	<!--managed-bean>
 		<managed-bean-name>createContactBean</managed-bean-name>
 		<managed-bean-class>org.parisjug.jsf.beans.CreateContactBean
 		</managed-bean-class>
@@ -20,8 +20,7 @@
 
 	<managed-bean>
 		<managed-bean-name>listContactsBean</managed-bean-name>
-		<managed-bean-class>org.parisjug.jsf.beans.ListContactsBean
-		</managed-bean-class>
-		<managed-bean-scope>application</managed-bean-scope>
-	</managed-bean>
+		<managed-bean-class>org.parisjug.jsf.manager.ListContactsBean</managed-bean-class>
+
+		<managed-bean-scope>application</managed-bean-scope></managed-bean-->
 </faces-config>
