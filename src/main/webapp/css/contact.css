@@ -29,7 +29,7 @@ h3 {
 }
 
 body a {
-	font-size: 18px;
+	font-size: 14px;
 	font-weight: bold;
 	color: #B53333;
 	text-decoration: none;
@@ -87,14 +87,14 @@ body a:hover {
 #footer {
 	clear: both;
 	width: 580px;
-	margin: 0 auto;
+	
 	padding: 20px 0;
 	font-size: 12px;
 	color: #424242;
 }
 
 #footer p {
-	margin: 0;
+	
 	text-align: center;
 	line-height: normal;
 }

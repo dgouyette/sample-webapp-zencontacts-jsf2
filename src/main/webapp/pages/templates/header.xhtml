@@ -1,13 +1,21 @@
-<f:view xmlns="http://www.w3.org/1999/xhtml"
-	xmlns:h="http://java.sun.com/jsf/html"
-	xmlns:f="http://java.sun.com/jsf/core"
-	xmlns:utils="http://java.sun.com/jsf/composite/resources/components/util">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+   xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:h="http://java.sun.com/jsf/html">
 
+  <h:head>
+    <title>IGNORED</title>
+  </h:head>
+
+  <h:body>
+    <ui:composition>
 	<div id="header"><a
-		href="#{facesContext.externalContext.requestContextPath}/pages/WelcomePage.faces">Accueil</a>
+		href="#{facesContext.externalContext.requestContextPath}/pages/index.faces">Accueil</a>
 	| <a
-		href="#{facesContext.externalContext.requestContextPath}/pages/ListContactPage.faces">Liste
+		href="#{facesContext.externalContext.requestContextPath}/pages/contact/index.faces">Liste
 	des contacts</a> | <a
-		href="#{facesContext.externalContext.requestContextPath}/pages/EditContactPage.faces">Créer
+		href="#{facesContext.externalContext.requestContextPath}/pages/contact/new.faces">Creer
 	un contact</a></div>
-</f:view>
+    </ui:composition>
+  </h:body>
+</html>

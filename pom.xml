@@ -13,7 +13,7 @@
     <properties>
         <jsf2.version>2.0.0-b17</jsf2.version>
         <jetty.version>6.1.4</jetty.version>
-        <netbeans.hint.deploy.server>gfv3ee6</netbeans.hint.deploy.server>
+        <netbeans.hint.deploy.server>gfv3</netbeans.hint.deploy.server>
     </properties>
 
     <dependencies>
@@ -47,6 +47,7 @@
         </repository>
     </repositories>
 
-    
+
 </project>
+
 

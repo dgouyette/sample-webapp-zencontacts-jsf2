@@ -1,38 +1,37 @@
 package org.parisjug.jsf.beans;
 
+import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
-import org.parisjug.jsf.manager.contactManager;
-import javax.annotation.PostConstruct;
-import javax.annotation.Resource;
 import javax.faces.bean.ManagedBean;
-import javax.faces.bean.RequestScoped;
 
+import javax.faces.bean.SessionScoped;
 import org.parisjug.jsf.domain.Contact;
 
 @ManagedBean
-@RequestScoped
+@SessionScoped
 public class ContactManagedBean {
 
-    @Resource
-    private contactManager contactManager;
-    
     private Contact currentContact;
 
     private List<Contact> listContact;
 
-    @PostConstruct
-    public void init() {
+    public ContactManagedBean(){
+        listContact = new ArrayList<Contact>();
+        listContact.add(new Contact("Gouyette", "Damien", new Date(), "damien.gouyette@gmail.com"));
+        listContact.add(new Contact("Petitit", "Francois", new Date(), "francois@petitit.fr"));
         currentContact = new Contact();
-
     }
 
+    
 
     public String addContact() {
-        contactManager.create(currentContact);
+        listContact.add(currentContact);
         return "ListContactPage";
     }
 
-    /** GETTER AND SETTER **/
+   /** GETTER AND SETTER **/
+
     public Contact getCurrentContact() {
         return currentContact;
     }
@@ -41,10 +40,16 @@ public class ContactManagedBean {
         this.currentContact = currentContact;
     }
 
-    
-
-    public List<Contact> getListContact(){
+    public List<Contact> getListContact() {
         return listContact;
     }
+
+    public void setListContact(List<Contact> listContact) {
+        this.listContact = listContact;
+    }
+
+   
+
+   
    
 }
