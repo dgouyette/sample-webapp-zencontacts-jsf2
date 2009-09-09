@@ -1,54 +1,59 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <html xmlns="http://www.w3.org/1999/xhtml"
-	xmlns:ui="http://java.sun.com/jsf/facelets"
-	xmlns:h="http://java.sun.com/jsf/html"
-	xmlns:f="http://java.sun.com/jsf/core"
-	xmlns:c="http://java.sun.com/jstl/core">
-<ui:composition template="/pages/templates/layout.xhtml">
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:c="http://java.sun.com/jstl/core">
+    <ui:composition template="/pages/templates/layout.xhtml">
 
-	<ui:define name="contenu">
-		<h:form>
-			<table cellspacing="5">
-				<tr>
-                                    <td>Pr&#233;nom :</td>
-					<td><h:inputText label="prenom"
-						value="#{contactManagedBean.currentContact.forname}">
-						<f:validateLength minimum="2" maximum="30" />
-					</h:inputText></td>
-				</tr>
+        <ui:define name="contenu">
+            <h:form>
+                <table cellspacing="5">
+                    <tr>
+                        <td>Nom :</td>
+                        <td><h:inputText label="nom" required="true"
+                                     value="#{contactManagedBean.currentContact.name}">
+                        <f:validateLength minimum="2" maximum="30" />
+                    </h:inputText></td>
+                    </tr>
+                    <tr>
+                        <td>Pr&#233;nom :</td>
+                        <td><h:inputText label="prenom" required="true"
+                                     value="#{contactManagedBean.currentContact.forname}">
+                        <f:validateLength minimum="2" maximum="30" />
+                    </h:inputText></td>
+                    </tr>
 
-				<tr>
-					<td>Nom :</td>
-					<td><h:inputText label="nom"
-						value="#{contactManagedBean.currentContact.name}">
-						<f:validateLength minimum="2" maximum="30" />
-					</h:inputText></td>
-				</tr>
-				<tr>
-					<td>Date de naissance :</td>
-					<td><h:inputText
-						value="#{contactManagedBean.currentContact.birthDate}">
-						<f:convertDateTime pattern="dd/MM/yyyy" />
-					</h:inputText></td>
-				</tr>
 
-				<tr>
-					<td>Email :</td>
-					<td><h:inputText
-						value="#{contactManagedBean.currentContact.email}" /></td>
-				</tr>
+                    <tr>
+                        <td>Date de naissance :</td>
+                        <td><h:inputText
+                        value="#{contactManagedBean.currentContact.birthDate}">
+                        <f:convertDateTime pattern="dd/MM/yyyy" />
+                    </h:inputText></td>
+                    </tr>
 
-				<tr>
-					<td><input type="reset" value="Annuler" class="button" /></td>
-					<!--				<td><input type="submit" value="Valider" class="button" /></td>-->
-                                        <td><h:commandButton value="Valider"
-                                                     action="#{contactManagedBean.addContact}" class="button" /></td>
-				</tr>
-			</table>
-			<h:messages />
-			<div id="errorsDiv" class="innerError" />
-		</h:form>
-	</ui:define>
+                    <tr>
+                        <td>Email :</td>
+                        <td><h:inputText
+                        value="#{contactManagedBean.currentContact.email}" /></td>
+                    </tr>
 
-</ui:composition>
+                    <tr>
+                        <td>
+                            <h:commandButton class="button" value="annuler" action="index?faces-redirect=true" immediate="true"/>
+                        </td>
+
+                        <td>
+                            <h:commandButton value="Valider"
+                                         action="#{contactManagedBean.addContact}" class="button" />
+                            </td>
+                    </tr>
+                </table>
+                <h:messages />
+                <div id="errorsDiv" class="innerError" />
+            </h:form>
+        </ui:define>
+
+    </ui:composition>
 </html>
