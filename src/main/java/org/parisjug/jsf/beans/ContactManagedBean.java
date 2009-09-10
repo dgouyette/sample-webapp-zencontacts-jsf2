@@ -6,6 +6,7 @@ import java.util.List;
 import javax.faces.bean.ManagedBean;
 
 import javax.faces.bean.SessionScoped;
+import org.parisjug.jsf.constants.Navigation;
 import org.parisjug.jsf.domain.Contact;
 
 @ManagedBean
@@ -27,7 +28,8 @@ public class ContactManagedBean {
 
     public String addContact() {
         listContact.add(currentContact);
-        return "ListContactPage";
+        currentContact = new Contact();
+        return Navigation.ADD_CONTACT_SUCCESS;
     }
 
    /** GETTER AND SETTER **/
