@@ -75,3 +75,12 @@ body a:hover {
 .error{
       color:red;
 }
+
+.errorMessage{
+      color:red;
+      font-style:italic;
+
+}
+.infoMessage{
+      color:black;
+}

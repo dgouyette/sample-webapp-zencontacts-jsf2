@@ -11,17 +11,28 @@
                 <table cellspacing="5">
                     <tr>
                         <td>Nom :</td>
-                        <td><h:inputText label="nom" required="true"
-                                     value="#{contactManagedBean.currentContact.name}">
+                        <td><h:inputText id="name" label="nom" required="true"
+                                     value="#{contactManagedBean.currentContact.name}"
+                                     binding="#{contactManagedBean.inputTextName}"
+                                     styleClass="#{contactManagedBean.nameStyle}">
                         <f:validateLength minimum="2" maximum="30" />
-                    </h:inputText></td>
+                        <f:ajax render="name nameMessage" showDetail="false"/>
+                    </h:inputText>
+                    <h:message id="nameMessage" for="name"/>
+                    </td>
                     </tr>
                     <tr>
                         <td>Pr&#233;nom :</td>
-                        <td><h:inputText label="prenom" required="true"
-                                     value="#{contactManagedBean.currentContact.forname}">
+                        <td>
+                    <h:inputText id="forname" label="prenom" required="true"
+                                 value="#{contactManagedBean.currentContact.forname}"
+                                 binding="#{contactManagedBean.inputTextForname}"
+                                 styleClass="#{contactManagedBean.fornameStyle}">
                         <f:validateLength minimum="2" maximum="30" />
-                    </h:inputText></td>
+                        <f:ajax render="forname fornameMessage"/>
+                    </h:inputText>
+                    <h:message id="fornameMessage" for="forname"/>
+                    </td>
                     </tr>
 
 
@@ -41,13 +52,13 @@
 
                     <tr>
                         <td>
-                            <h:commandButton class="button" value="annuler" action="index?faces-redirect=true" immediate="true"/>
-                        </td>
+                    <h:commandButton class="button" value="annuler" action="index?faces-redirect=true" immediate="true"/>
+                    </td>
 
-                        <td>
-                            <h:commandButton value="Valider"
-                                         action="#{contactManagedBean.addContact}" class="button" />
-                            </td>
+                    <td>
+                    <h:commandButton value="Valider"
+                                     action="#{contactManagedBean.addContact}" class="button" />
+                    </td>
                     </tr>
                 </table>
                 <h:messages errorClass="error" globalOnly="false"  />

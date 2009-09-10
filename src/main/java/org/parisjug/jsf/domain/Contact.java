@@ -8,16 +8,13 @@ public class Contact {
 
 	private String forname;
 
-	private java.util.Date birthDate;
+	private Date birthDate;
 
 	private String email;
 
 	public Contact() {
 		super();
 		birthDate = new Date();
-		name = new String();
-		forname = new String();
-		email = new String();
 	}
 
 	public Contact(String name, String forname, Date birthDate, String email) {
@@ -44,11 +41,11 @@ public class Contact {
 		this.forname = forname;
 	}
 
-	public java.util.Date getBirthDate() {
+	public Date getBirthDate() {
 		return birthDate;
 	}
 
-	public void setBirthDate(java.util.Date birthDate) {
+	public void setBirthDate(Date birthDate) {
 		this.birthDate = birthDate;
 	}
 
