@@ -17,31 +17,30 @@ public class Contact implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
     
-    private String name;
+    private String firstName;
     
-    private String forname;
+    private String lastName;
 
     @Temporal(javax.persistence.TemporalType.DATE)
     private Date birthDate;
 
-<<<<<<< .mine
+
     private String email;
-=======
-	private Date birthDate;
->>>>>>> .r562
+            
+
+     /* GETTER AND SETTER */
+
 
     public Contact() {
        
     }
 
-<<<<<<< .mine
-    /* GETTER AND SETTER */
-=======
-	public Contact() {
-		super();
-		birthDate = new Date();
-	}
->>>>>>> .r562
+    public Contact(String lastName, String firstName, Date birthDate, String email) {
+       this.lastName = lastName;
+       this.firstName = firstName;
+       this.birthDate = birthDate;
+       this.email = email;
+    }
 
     public Date getBirthDate() {
         return birthDate;
@@ -59,44 +58,33 @@ public class Contact implements Serializable {
         this.email = email;
     }
 
-    public String getForname() {
-        return forname;
-    }
-
-<<<<<<< .mine
-    public void setForname(String forname) {
-        this.forname = forname;
-    }
-=======
-	public Date getBirthDate() {
-		return birthDate;
-	}
->>>>>>> .r562
-
-<<<<<<< .mine
     public long getId() {
         return id;
     }
-=======
-	public void setBirthDate(Date birthDate) {
-		this.birthDate = birthDate;
-	}
->>>>>>> .r562
 
     public void setId(long id) {
         this.id = id;
     }
 
-    public String getName() {
-        return name;
+    public String getLastName() {
+        return lastName;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
     }
 
+    public String getFirstName() {
+        return firstName;
+    }
 
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
 
+   
+
+    
 
     
 }
