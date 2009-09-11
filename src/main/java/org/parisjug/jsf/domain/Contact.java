@@ -1,60 +1,102 @@
 package org.parisjug.jsf.domain;
 
+import java.io.Serializable;
 import java.util.Date;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.NamedQuery;
+import javax.persistence.Temporal;
 
-public class Contact {
+@Entity
+@NamedQuery(name="Contact.findAll", query="select c from Contact c")
+public class Contact implements Serializable {
 
-	private String name;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private long id;
+    
+    private String name;
+    
+    private String forname;
 
-	private String forname;
+    @Temporal(javax.persistence.TemporalType.DATE)
+    private Date birthDate;
 
+<<<<<<< .mine
+    private String email;
+=======
 	private Date birthDate;
+>>>>>>> .r562
 
-	private String email;
+    public Contact() {
+       
+    }
 
+<<<<<<< .mine
+    /* GETTER AND SETTER */
+=======
 	public Contact() {
 		super();
 		birthDate = new Date();
 	}
+>>>>>>> .r562
 
-	public Contact(String name, String forname, Date birthDate, String email) {
-		super();
-		this.name = name;
-		this.forname = forname;
-		this.birthDate = birthDate;
-		this.email = email;
-	}
+    public Date getBirthDate() {
+        return birthDate;
+    }
 
-	public String getName() {
-		return name;
-	}
+    public void setBirthDate(Date birthDate) {
+        this.birthDate = birthDate;
+    }
 
-	public void setName(String name) {
-		this.name = name;
-	}
+    public String getEmail() {
+        return email;
+    }
 
-	public String getForname() {
-		return forname;
-	}
+    public void setEmail(String email) {
+        this.email = email;
+    }
 
-	public void setForname(String forname) {
-		this.forname = forname;
-	}
+    public String getForname() {
+        return forname;
+    }
 
+<<<<<<< .mine
+    public void setForname(String forname) {
+        this.forname = forname;
+    }
+=======
 	public Date getBirthDate() {
 		return birthDate;
 	}
+>>>>>>> .r562
 
+<<<<<<< .mine
+    public long getId() {
+        return id;
+    }
+=======
 	public void setBirthDate(Date birthDate) {
 		this.birthDate = birthDate;
 	}
+>>>>>>> .r562
 
-	public String getEmail() {
-		return email;
-	}
+    public void setId(long id) {
+        this.id = id;
+    }
 
-	public void setEmail(String email) {
-		this.email = email;
-	}
+    public String getName() {
+        return name;
+    }
 
+    public void setName(String name) {
+        this.name = name;
+    }
+
+
+
+
+    
 }

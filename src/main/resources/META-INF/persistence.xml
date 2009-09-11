@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="1.0" xmlns="http://java.sun.com/xml/ns/persistence">
+    <persistence-unit name="contactPU" transaction-type="JTA">
+        <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
+        <class>org.parisjug.jsf.domain.Contact</class>
+        <properties>
+
+            <property name="eclipselink.target-database" value="DERBY"/>
+            <property name="eclipselink.jdbc.driver" value="org.apache.derby.jdbc.ClientDriver"/>
+            <property name="eclipselink.jdbc.url" value="jdbc:derby://localhost:1527/contactDB"/>
+            <property name="eclipselink.jdbc.user" value="APP"/>
+            <property name="eclipselink.jdbc.password" value="APP"/>
+            <property name="eclipselink.ddl-generation" value="update"/>
+            <!--property name="eclipselink.ddl-generation" value="drop-and-create-tables"/-->
+           
+        </properties>
+    </persistence-unit>
+</persistence>

@@ -7,7 +7,7 @@
     <ui:composition template="/pages/templates/layout.xhtml">
 
         <ui:define name="contenu">
-            <h:dataTable value="#{contactManagedBean.listContact}" var="contact" rowClasses="row">
+            <h:dataTable value="#{contactManagedBean.contacts}" var="contact" rowClasses="row">
                 <h:column>
                     <f:facet name="header" class="header">
                         <h:outputText value="Nom" />
