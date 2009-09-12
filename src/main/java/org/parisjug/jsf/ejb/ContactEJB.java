@@ -7,7 +7,6 @@ import javax.ejb.TransactionAttributeType;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
-import javax.persistence.criteria.CriteriaQuery;
 import org.parisjug.jsf.domain.Contact;
 
 @Stateless
@@ -23,6 +22,7 @@ public class ContactEJB {
 
     public void save(Contact contact) {
         entityManager.persist(contact);
+        System.out.println("Contact ajoute : "+contact);
     }
 
     public void delete(Contact contact) {

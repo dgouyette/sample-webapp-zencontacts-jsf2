@@ -7,32 +7,80 @@
     <ui:composition template="/pages/templates/layout.xhtml">
 
         <ui:define name="contenu">
-            <h:dataTable value="#{contactManagedBean.contacts}" var="contact" rowClasses="row">
-                <h:column>
-                    <f:facet name="header" class="header">
-                        <h:outputText value="Nom" />
-                    </f:facet>
-                    <h:outputText value="#{contact.lastName}" />
-                </h:column>
-                <h:column>
-                    <f:facet name="header" class="header">
-                        <h:outputText value="Prenom" />
-                    </f:facet>
-                    <h:outputText value="#{contact.firstName}" />
-                </h:column>
-                <h:column>
-                    <f:facet name="header" class="header">
-                        <h:outputText value="Date de naissance" />
-                    </f:facet>
-                    <h:outputText value="#{contact.birthDate}" />
-                </h:column>
-                <h:column>
-                    <f:facet name="header" class="header">
-                        <h:outputText value="Email" />
-                    </f:facet>
-                    <h:outputText value="#{contact.email}" />
-                </h:column>
-            </h:dataTable>
+            <h:form>
+                <h:dataTable id="dataTableContacts" value="#{contactManagedBean.contacts}" var="contact" rowClasses="row">
+                    <h:column>
+                        <f:facet name="header" class="header">
+                            <h:outputText value="Nom" />
+                        </f:facet>
+
+                        <h:outputText value="#{contact.lastName}" />
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header" class="header">
+                            <h:outputText value="Pr&#233;nom" />
+                        </f:facet>
+                        <h:outputText value="#{contact.firstName}" />
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header" class="header">
+                            <h:outputText value="Date de naissance" />
+                        </f:facet>
+                        <h:outputText value="#{contact.birthDate}" />
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header" class="header">
+                            <h:outputText value="Email" />
+                        </f:facet>
+                        <h:outputText value="#{contact.email}" />
+                    </h:column>
+                </h:dataTable>
+
+                <h:panelGroup id="quickNewContact" layout="none">
+
+                    <table cellspacing="5">
+                        <tr>
+                            <td><h:outputLabel value="Nom" for="lastName" /></td>
+                        <td>
+
+                        <h:inputText required="true" value="#{contactManagedBean.currentContact.lastName}" id="lastName" label="Nom ">
+                            <f:validateLength minimum="2" maximum="30" />
+                            <f:ajax render="lastNameMessage"/>
+                        </h:inputText>
+                        <h:message styleClass="error"  id="lastNameMessage" for="lastName"/>
+                        </td>
+                        </tr>
+                        <tr>
+                            <td><h:outputLabel value="Pr&#233;nom" for="firstName" /></td>
+                        <td>
+
+                        <h:inputText id="firstName" label="prenom" required="true" value="#{contactManagedBean.currentContact.firstName}">
+                            <f:validateLength minimum="2" maximum="30" />
+                            <f:ajax render="firstNameMessage"/>
+                        </h:inputText>
+                        <h:message errorClass="error" id="firstNameMessage" for="firstName"/>
+
+                        </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                &#160;
+                            </td>
+                            <td>
+                        <h:commandButton value="ajouter" action="#{contactManagedBean.addContact}" class="button">
+                            <f:ajax execute="firstName lastName" render="dataTableContacts quickNewContact"/>
+                        </h:commandButton>
+
+                        </td>
+                        </tr>
+                    </table>
+
+                </h:panelGroup>
+
+
+
+            </h:form>
+
         </ui:define>
 
     </ui:composition>

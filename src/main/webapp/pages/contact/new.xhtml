@@ -51,7 +51,7 @@
                     <tr>
                         <td><h:outputLabel value="Email" for="email" /></td>
                         <td>
-                        <h:inputText id="email" value="#{contactManagedBean.currentContact.email}" validatorMessage="Format incorrect" >
+                        <h:inputText id="email" value="#{contactManagedBean.currentContact.email}" validatorMessage="email incorrect" >
                             <f:validateRegex pattern="^[a-z0-9._-]+@[a-z0-9.-]{2,}[.][a-z]{2,3}$"/>
                             <f:ajax render="emailMessage"/>
                         </h:inputText>

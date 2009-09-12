@@ -1,12 +1,10 @@
 package org.parisjug.jsf.controller;
 
-import java.io.Serializable;
 import javax.annotation.PostConstruct;
 import javax.ejb.EJB;
 import javax.faces.bean.ManagedBean;
 
 import javax.faces.bean.RequestScoped;
-import javax.faces.component.UIInput;
 import javax.faces.model.DataModel;
 import javax.faces.model.ListDataModel;
 import org.parisjug.jsf.constants.Navigation;

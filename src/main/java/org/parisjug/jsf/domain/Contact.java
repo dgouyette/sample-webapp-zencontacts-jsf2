@@ -30,8 +30,14 @@ public class Contact implements Serializable {
     private String email;
             
 
-     /* GETTER AND SETTER */
+    @Override
+    public String toString(){
+        return "id : "+id +", prenom :"+this.firstName+", nom : "+lastName;
+    }
 
+
+
+    /* Contructeurs */
 
     public Contact() {
        
@@ -43,6 +49,8 @@ public class Contact implements Serializable {
        this.birthDate = birthDate;
        this.email = email;
     }
+
+     /* GETTER AND SETTER */
 
     public Date getBirthDate() {
         return birthDate;
