@@ -6,6 +6,7 @@ import javax.ejb.EJB;
 import javax.faces.bean.ManagedBean;
 
 import javax.faces.bean.RequestScoped;
+import javax.faces.component.UIInput;
 import javax.faces.model.DataModel;
 import javax.faces.model.ListDataModel;
 import org.parisjug.jsf.constants.Navigation;
@@ -14,11 +15,14 @@ import org.parisjug.jsf.ejb.ContactEJB;
 
 @ManagedBean
 @RequestScoped
-public class ContactManagedBean implements Serializable {
+public class ContactManagedBean {
 
+    
     private Contact currentContact;
+
     @EJB
     private ContactEJB contactEJB;
+
     private DataModel<Contact> contacts;
 
     /**
@@ -26,6 +30,7 @@ public class ContactManagedBean implements Serializable {
      */
     public ContactManagedBean() {
         currentContact = new Contact();
+        
     }
 
     @PostConstruct
@@ -68,4 +73,9 @@ public class ContactManagedBean implements Serializable {
     public void setCurrentContact(Contact currentContact) {
         this.currentContact = currentContact;
     }
+
+   
+
+    
+
 }

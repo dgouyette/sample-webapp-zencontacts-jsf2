@@ -7,47 +7,57 @@
     <ui:composition template="/pages/templates/layout.xhtml">
 
         <ui:define name="contenu">
-            <h:form>
+            <h:form id="formNew">
+                
+                
                 <table cellspacing="5">
                     <tr>
-                        <td>Nom :</td>
-                        <td><h:inputText id="name" label="nom" required="true"
-                                     value="#{contactManagedBean.currentContact.name}"
-                                     binding="#{contactManagedBean.inputTextName}"
-                                     styleClass="#{contactManagedBean.nameStyle}">
-                        <f:validateLength minimum="2" maximum="30" />
-                        <f:ajax render="name nameMessage" showDetail="false"/>
-                    </h:inputText>
-                    <h:message id="nameMessage" for="name"/>
-                    </td>
-                    </tr>
-                    <tr>
-                        <td>Pr&#233;nom :</td>
+                        <td><h:outputLabel value="Nom" for="lastName" /></td>
                         <td>
-                    <h:inputText id="forname" label="prenom" required="true"
-                                 value="#{contactManagedBean.currentContact.forname}"
-                                 binding="#{contactManagedBean.inputTextForname}"
-                                 styleClass="#{contactManagedBean.fornameStyle}">
-                        <f:validateLength minimum="2" maximum="30" />
-                        <f:ajax render="forname fornameMessage"/>
-                    </h:inputText>
-                    <h:message id="fornameMessage" for="forname"/>
-                    </td>
+                        
+                        <h:inputText required="true" value="#{contactManagedBean.currentContact.lastName}" id="lastName" label="Nom ">
+                            <f:validateLength minimum="2" maximum="30" />
+                            <f:ajax render="lastNameMessage"/>
+                        </h:inputText>
+                        <h:message styleClass="error"  id="lastNameMessage" for="lastName"/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><h:outputLabel value="Pr&#233;nom" for="firstName" /></td>
+                        <td>
+
+                        <h:inputText id="firstName" label="prenom" required="true" value="#{contactManagedBean.currentContact.firstName}">
+                            <f:validateLength minimum="2" maximum="30" />
+                            <f:ajax render="firstNameMessage"/>
+                        </h:inputText>
+                        <h:message errorClass="error" id="firstNameMessage" for="firstName"/>
+
+                        </td>
                     </tr>
 
 
                     <tr>
-                        <td>Date de naissance :</td>
-                        <td><h:inputText
-                        value="#{contactManagedBean.currentContact.birthDate}">
-                        <f:convertDateTime pattern="dd/MM/yyyy" />
-                    </h:inputText></td>
+                        <td><h:outputLabel value="Date de naissance" for="firstName" /></td>
+                        <td>
+                        <h:inputText id="birthDate" value="#{contactManagedBean.currentContact.birthDate}">
+                            <f:convertDateTime pattern="dd/MM/yyyy" />
+                           <f:ajax render="birthDateMessage"/>
+                        </h:inputText>
+                         <h:message errorClass="error" id="birthDateMessage" for="birthDate"/>
+
+                        </td>
                     </tr>
 
                     <tr>
-                        <td>Email :</td>
-                        <td><h:inputText
-                        value="#{contactManagedBean.currentContact.email}" /></td>
+                        <td><h:outputLabel value="Email" for="email" /></td>
+                        <td>
+                        <h:inputText id="email" value="#{contactManagedBean.currentContact.email}" validatorMessage="Format incorrect" >
+                            <f:validateRegex pattern="^[a-z0-9._-]+@[a-z0-9.-]{2,}[.][a-z]{2,3}$"/>
+                            <f:ajax render="emailMessage"/>
+                        </h:inputText>
+                         <h:message errorClass="error" id="emailMessage" for="email"/>
+
+                        </td>
                     </tr>
 
                     <tr>
@@ -61,7 +71,7 @@
                     </td>
                     </tr>
                 </table>
-                <h:messages errorClass="error" globalOnly="false"  />
+               
             </h:form>
         </ui:define>
 

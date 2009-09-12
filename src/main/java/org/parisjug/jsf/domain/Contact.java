@@ -9,6 +9,8 @@ import javax.persistence.Id;
 import javax.persistence.NamedQuery;
 import javax.persistence.Temporal;
 
+
+
 @Entity
 @NamedQuery(name="Contact.findAll", query="select c from Contact c")
 public class Contact implements Serializable {
@@ -16,7 +18,7 @@ public class Contact implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
-    
+
     private String firstName;
     
     private String lastName;
