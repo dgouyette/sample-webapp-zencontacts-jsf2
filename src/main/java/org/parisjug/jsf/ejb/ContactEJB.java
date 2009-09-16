@@ -22,7 +22,6 @@ public class ContactEJB {
 
     public void save(Contact contact) {
         entityManager.persist(contact);
-        System.out.println("Contact ajoute : "+contact);
     }
 
     public void delete(Contact contact) {

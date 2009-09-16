@@ -3,7 +3,8 @@
       xmlns:ui="http://java.sun.com/jsf/facelets"
       xmlns:h="http://java.sun.com/jsf/html"
       xmlns:f="http://java.sun.com/jsf/core"
-      xmlns:c="http://java.sun.com/jstl/core">
+      xmlns:c="http://java.sun.com/jstl/core"
+      >
     <ui:composition template="/pages/templates/layout.xhtml">
 
         <ui:define name="contenu">
@@ -39,7 +40,7 @@
                     <tr>
                         <td><h:outputLabel value="Date de naissance" for="firstName" /></td>
                         <td>
-                        <h:inputText id="birthDate" value="#{contactManagedBean.currentContact.birthDate}">
+                        <h:inputText id="birthDate" label="Date de naissance" required="true" value="#{contactManagedBean.currentContact.birthDate}">
                             <f:convertDateTime pattern="dd/MM/yyyy" />
                            <f:ajax render="birthDateMessage"/>
                         </h:inputText>
@@ -51,7 +52,7 @@
                     <tr>
                         <td><h:outputLabel value="Email" for="email" /></td>
                         <td>
-                        <h:inputText id="email" value="#{contactManagedBean.currentContact.email}" validatorMessage="email incorrect" >
+                        <h:inputText id="email" label="email" required="true" value="#{contactManagedBean.currentContact.email}" validatorMessage="email incorrect" >
                             <f:validateRegex pattern="^[a-z0-9._-]+@[a-z0-9.-]{2,}[.][a-z]{2,3}$"/>
                             <f:ajax render="emailMessage"/>
                         </h:inputText>

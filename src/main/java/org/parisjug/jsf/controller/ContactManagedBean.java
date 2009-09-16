@@ -44,6 +44,7 @@ public class ContactManagedBean {
     public String addContact() {
         contactEJB.save(currentContact);
         reload();
+
         currentContact = new Contact();
         return Navigation.ADD_CONTACT_SUCCESS;
     }
