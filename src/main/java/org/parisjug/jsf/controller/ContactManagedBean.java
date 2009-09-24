@@ -15,12 +15,13 @@ import org.parisjug.jsf.ejb.ContactEJB;
 @RequestScoped
 public class ContactManagedBean {
 
-    
     private Contact currentContact;
 
     @EJB
     private ContactEJB contactEJB;
 
+
+    /** Data liés au tableau**/
     private DataModel<Contact> contacts;
 
     /**
@@ -28,7 +29,7 @@ public class ContactManagedBean {
      */
     public ContactManagedBean() {
         currentContact = new Contact();
-        
+
     }
 
     @PostConstruct
@@ -38,7 +39,7 @@ public class ContactManagedBean {
 
     public void reload() {
         this.contacts = new ListDataModel<Contact>(contactEJB.getAll());
-        
+
     }
 
     public String addContact() {
@@ -49,14 +50,8 @@ public class ContactManagedBean {
         return Navigation.ADD_CONTACT_SUCCESS;
     }
 
-
-
-
+    //Coder ici la suppression
     /** GETTER AND SETTER **/
-
-
-
-
     public DataModel<Contact> getContacts() {
         return contacts;
     }
@@ -72,9 +67,4 @@ public class ContactManagedBean {
     public void setCurrentContact(Contact currentContact) {
         this.currentContact = currentContact;
     }
-
-   
-
-    
-
 }

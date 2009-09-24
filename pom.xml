@@ -43,9 +43,11 @@
             <version>1.8.0.8patch01-brew</version>
         </dependency>
 
-
-      
-      
+        <dependency>
+            <groupId>org.codehaus.groovy</groupId>
+            <artifactId>groovy-all</artifactId>
+            <version>1.6.2</version>
+        </dependency>
         <dependency>
             <groupId>log4j</groupId>
             <artifactId>log4j</artifactId>
@@ -99,6 +101,7 @@
                 </executions>
 
             </plugin>
+            
 
 
         </plugins>

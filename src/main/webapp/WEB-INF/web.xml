@@ -4,15 +4,11 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
 
-    <display-name>Archetype Created Web Application</display-name>
+    <display-name>contact Web Application</display-name>
 
     <context-param>
         <param-name>javax.faces.PROJECT_STAGE</param-name>
         <param-value>Development</param-value>
-    </context-param>
-     <context-param>
-        <param-name>javax.faces.INTERPRET_EMPTY_STRING_SUBMITTED_VALUES_AS_NULL</param-name>
-        <param-value>false</param-value>
     </context-param>
 
     <servlet>

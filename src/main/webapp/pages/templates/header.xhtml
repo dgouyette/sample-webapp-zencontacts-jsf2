@@ -3,19 +3,19 @@
    xmlns:ui="http://java.sun.com/jsf/facelets"
     xmlns:h="http://java.sun.com/jsf/html">
 
+
+
+  
   <h:head>
     <title>IGNORED</title>
   </h:head>
 
   <h:body>
     <ui:composition>
-	<div id="header"><a
-		href="#{facesContext.externalContext.requestContextPath}/pages/index.faces">Accueil</a>
-	| <a
-		href="#{facesContext.externalContext.requestContextPath}/pages/contact/index.faces">Liste
-	des contacts</a> | <a
-		href="#{facesContext.externalContext.requestContextPath}/pages/contact/new.faces">Creer
-	un contact</a></div>
+	<div id="header">
+            <a href="#{facesContext.externalContext.requestContextPath}/pages/index.faces">Accueil</a> |
+	    <a href="#{facesContext.externalContext.requestContextPath}/pages/contact.faces">Liste des contacts</a>
+        </div>
     </ui:composition>
   </h:body>
 </html>

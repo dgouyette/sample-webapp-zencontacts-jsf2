@@ -7,59 +7,37 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.NamedQuery;
-import javax.persistence.Temporal;
-
-
 
 @Entity
-@NamedQuery(name="Contact.findAll", query="select c from Contact c")
+@NamedQuery(name = "Contact.findAll", query = "select c from Contact c")
 public class Contact implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
-
     private String firstName;
-    
     private String lastName;
-
-    @Temporal(javax.persistence.TemporalType.DATE)
-    private Date birthDate;
-
-
     private String email;
-            
 
     @Override
-    public String toString(){
-        return "id : "+id +", prenom :"+this.firstName+", nom : "+lastName;
+    public String toString() {
+        return "id : " + id + ", prenom :" + this.firstName + ", nom : " + lastName;
     }
 
-
-
     /* Contructeurs */
-
     public Contact() {
-       
     }
 
     public Contact(String lastName, String firstName, Date birthDate, String email) {
-       this.lastName = lastName;
-       this.firstName = firstName;
-       this.birthDate = birthDate;
-       this.email = email;
+        this.lastName = lastName;
+        this.firstName = firstName;
+        this.email = email;
     }
 
-     /* GETTER AND SETTER */
+    /* GETTER AND SETTER */
 
-    public Date getBirthDate() {
-        return birthDate;
-    }
 
-    public void setBirthDate(Date birthDate) {
-        this.birthDate = birthDate;
-    }
-
+    
     public String getEmail() {
         return email;
     }
@@ -91,10 +69,4 @@ public class Contact implements Serializable {
     public void setFirstName(String firstName) {
         this.firstName = firstName;
     }
-
-   
-
-    
-
-    
 }

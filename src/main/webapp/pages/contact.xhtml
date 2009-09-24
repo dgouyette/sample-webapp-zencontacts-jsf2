@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+    <ui:composition template="/pages/templates/layout.xhtml">
+
+        <ui:define name="contenu">
+            <h:form>
+
+
+                <!-- Tableau d'affichage des contacts -->
+                <h:dataTable id="dataTableContacts" value="#{contactManagedBean.contacts}" var="contact" rowClasses="row">
+                    <h:column>
+                        <f:facet name="header" class="header">
+                            <h:outputText value="Nom" />
+                        </f:facet>
+                        <h:outputText value="#{contact.lastName}" />
+                    </h:column>
+
+                    <h:column>
+                        <f:facet name="header" class="header">
+                            <h:outputText value="Pr&#233;nom" />
+                        </f:facet>
+                        <h:outputText value="#{contact.firstName}" />
+                    </h:column>
+
+
+                    <h:column>
+                        <f:facet name="header" class="header">
+                            <h:outputText value="Email" />
+                        </f:facet>
+                        <h:outputText value="#{contact.email}" />
+                    </h:column>
+
+                    <h:column>
+                        <f:facet name="header" class="header">
+                            <h:outputText value="Action" />
+                        </f:facet>
+                        <a href="#" onclick="alert('action a implementer')">delete</a>
+                    </h:column>
+                </h:dataTable>
+
+
+
+
+                <!-- formulaire d'ajout d'un contact -->
+                <h:panelGroup id="quickNewContact" layout="none">
+
+                    <table cellspacing="5">
+
+
+                        <!-- LastName-->
+                        <tr>
+                            <td><h:outputLabel value="Nom" for="lastName" /></td>
+                            <td>
+                                <h:inputText required="true" value="#{contactManagedBean.currentContact.lastName}" id="lastName" label="Nom ">
+                                    <f:validateLength minimum="2" maximum="30" />
+                                </h:inputText>
+
+                                <h:message styleClass="error"  id="lastNameMessage" for="lastName"/>
+                            </td>
+                        </tr>
+
+                        
+
+                         <!-- firstName -->
+                        <tr>
+                            <td><h:outputLabel value="Pr&#233;nom" for="firstName" /></td>
+                            <td>
+                                <h:inputText id="firstName" label="prenom" required="true" value="#{contactManagedBean.currentContact.firstName}">
+                                    <f:validateLength minimum="2" maximum="30" />
+                                </h:inputText>
+                                <h:message errorClass="error" id="firstNameMessage" for="firstName"/>
+                            </td>
+                        </tr>
+
+
+                         <!-- email -->
+                        <tr>
+                            <td><h:outputLabel value="Email" for="email" /></td>
+                            <td>
+                                <h:inputText id="email" label="email" required="true" value="#{contactManagedBean.currentContact.email}">
+                                    <f:validateRegex pattern="^[a-z0-9._-]+@[a-z0-9.-]{2,}[.][a-z]{2,3}$"/>
+                                </h:inputText>
+                                <h:message errorClass="error" id="emailMessage" for="email"/>
+                            </td>
+                        </tr>
+
+
+                        <!-- boutons du formulaire -->
+                        <tr>
+                            <td>
+                                &#160;
+                            </td>
+                            <td>
+                               
+
+                                <!-- action appelant la methode addContact du managedBean contactManagedBean-->
+                                <h:commandButton value="ajouter" action="#{contactManagedBean.addContact}" class="button">
+                                    <!-- Ajouter soumission ajax -->
+                                 
+                                </h:commandButton>
+                                    &#160;&#160;
+                                 <!-- action pointant sur index.faces directement -->
+                                <h:commandButton action="index" value="annuler" immediate="true" class="button"/>
+
+
+                            </td>
+                        </tr>
+
+
+
+
+
+                    </table>
+                </h:panelGroup>
+
+
+
+            </h:form>
+
+        </ui:define>
+
+    </ui:composition>
+</html>
