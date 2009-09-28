@@ -9,5 +9,5 @@ public class Navigation {
     /**
      * Url de succes apres ajout contact
      */
-    public final static String  ADD_CONTACT_SUCCESS= "/pages/contact/index.faces";
+    public final static String  ADD_CONTACT_SUCCESS= "/pages/index.faces";
 }
