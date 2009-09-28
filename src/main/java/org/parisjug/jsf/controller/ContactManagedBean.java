@@ -42,15 +42,21 @@ public class ContactManagedBean {
 
     }
 
-    public String addContact() {
-        contactEJB.save(currentContact);
+    public String addContact() throws InterruptedException {
+        Thread.sleep(1000L);
+          contactEJB.save(currentContact);
         reload();
 
         currentContact = new Contact();
-        return Navigation.ADD_CONTACT_SUCCESS;
+        return "";
     }
 
     //Coder ici la suppression
+
+
+
+
+
     /** GETTER AND SETTER **/
     public DataModel<Contact> getContacts() {
         return contacts;
