@@ -55,7 +55,7 @@
                             <td><h:outputLabel value="Nom" for="lastName" /></td>
                             <td>
                                 <h:inputText required="true" value="#{contactManagedBean.currentContact.lastName}" id="lastName" label="Nom ">
-                                    <f:validateLength minimum="2" maximum="30" />
+                                   <f:validateLength minimum="2" maximum="30" />
                                 </h:inputText>
 
                                 <h:message styleClass="error"  id="lastNameMessage" for="lastName"/>

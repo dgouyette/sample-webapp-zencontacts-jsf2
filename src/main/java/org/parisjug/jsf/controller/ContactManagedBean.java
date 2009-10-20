@@ -7,7 +7,6 @@ import javax.faces.bean.ManagedBean;
 import javax.faces.bean.RequestScoped;
 import javax.faces.model.DataModel;
 import javax.faces.model.ListDataModel;
-import org.parisjug.jsf.constants.Navigation;
 import org.parisjug.jsf.domain.Contact;
 import org.parisjug.jsf.ejb.ContactEJB;
 
