@@ -1,0 +1,32 @@
+h2. Introduction
+
+Cet sample est la version JSF2 de l'application zencontact de "Zenika":http://www.zenika.com/
+
+Celui ci utilise principalement les librairies suivantes :
+
+* JSF2 (version sun-ri & "MyFaces":myfaces.apache.org/)
+* EJB 3.1 (provided par glassfish v3
+* EclipseLink pour la gestion de la persistance
+
+
+h2. Lancer l'application
+
+Penser à mettre à jour le fichier ./src/main/resources/persistence.xml pour qu'il corresponde au paramètres de connexion de votre base de données
+
+
+h2. Problème de téléchargement d'artifact
+
+Si vous avez des problèmes pour télécharger les différents artifacts, vous pouvez utiliser mon repo nexus pour les récupérer
+
+en ajoutant le repository suivant dans votre pom.xml
+
+<pre>
+<code>
+<repositories>
+  <repository>
+     <id>Damien GOUYETTE repo</id>
+     <url>http://nexus.cestpasdur.com/nexus/content/groups/all/</url>
+  </repository>
+</repositories>
+</code>
+</pre>

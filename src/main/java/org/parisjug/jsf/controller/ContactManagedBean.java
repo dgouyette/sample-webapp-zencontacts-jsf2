@@ -20,11 +20,11 @@ public class ContactManagedBean {
     private ContactEJB contactEJB;
 
 
-    /** Data liés au tableau**/
+    /** Data li√©s au tableau**/
     private DataModel<Contact> contacts;
 
     /**
-     * Initialise les donnees pour l'écran
+     * Initialise les donnees pour l'√©cran
      */
     public ContactManagedBean() {
         currentContact = new Contact();
